@@ -8,6 +8,7 @@ import threading
 import time
 from datetime import date, datetime
 from xml.etree import ElementTree
+import tempfile
 
 from dotenv import load_dotenv
 from flask import Flask, request  # <-- Agregamos Flask y request
@@ -46,7 +47,11 @@ examenes_por_usuario = {}
 repasos_por_usuario = {}
 documentos_por_usuario = {}  # chat_id -> materia -> lista de documentos
 
-ARCHIVO_HISTORIAL = "historial.csv"
+
+# Directorio seguro: usa /tmp si está en Vercel, o la carpeta actual si estás en tu PC
+BASE_DIR = "/tmp" if os.getenv("VERCEL") else "."
+ARCHIVO_HISTORIAL = os.path.join(BASE_DIR, "historial.csv")
+ARCHIVO_TAREAS = os.path.join(BASE_DIR, "tareas_studybot.json")
 
 
 def obtener_materias(chat_id):
@@ -63,7 +68,6 @@ def obtener_examenes(chat_id):
 
 pendientes_documentos = {}
 
-ARCHIVO_TAREAS = "tareas_studybot.json"
 
 
 def cargar_tareas():
