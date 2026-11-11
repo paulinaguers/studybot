@@ -1,0 +1,8 @@
+pyTelegramBotAPI
+flask
+python-dotenv
+google-genai
+requests
+pypdf
+python-docx
+python-pptx
