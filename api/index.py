@@ -275,7 +275,7 @@ def comando_ayuda(message):
       " disponibles\n/metodo — pedir un método de estudio\n/plan — calcular"
       " cuánto estudiar por día\n/guia — recibir una guía de"
       " estudio\n\n<b>🔗 Recursos extra:</b>\n/notebooklm — abrir NotebookLM"
-      " para estudiar con tus fuentes\n/ambiente — abrir un espacio de estudio"
+      " para estudiar con tus fuentes\n/ambiente — abrir un espacio de estudio y utilizar el método pomodoro"
       " en LifeAt\n\n"
   )
   bot.send_message(message.chat.id, texto)
