@@ -125,7 +125,7 @@ def mostrar_checklist(chat_id):
 
 def solicitar_tarea(chat_id):
   mensaje = bot.send_message(
-      chat_id, "✏️ Escribí la tarea que querés agregar (máximo 150 caracteres)."
+      chat_id, "✏️ Escribí la tarea que querés agregar (como máximo 150 caracteres)."
   )
   bot.register_next_step_handler(mensaje, recibir_nueva_tarea)
 
