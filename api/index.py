@@ -427,7 +427,7 @@ def generar_repaso(message):
   if not respuesta:
     bot.send_message(
         message.chat.id,
-        "No pude generar el repaso en este momento. Probá de nuevo.",
+        "No pude generar el repaso en este momento. Probá de nuevo en unos minutos.",
     )
     return
   try:
